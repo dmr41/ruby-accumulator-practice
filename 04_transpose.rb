@@ -2,7 +2,36 @@
 #
 # You can use any methods you like on the input array except `#transpose`
 def transpose(array)
+  result = []
+  number = array.count
+  if array.empty?
+    single_array = array
+  else
+    single_array = [array[0]]
+  end
+  single_array.each do |val|
+    val.each do |v|
+      new_array = []
+      number.times do
+        new_array << v
+      end
+      result << new_array
+    end
+  end
+  result
 end
+
+# result = []
+# item_counter = array[0].count - 1
+#
+# array.each do |inner_array|
+#   inner_array.each do |value|
+#     pvalue
+#   end
+# end
+
+
+
 
 require 'rspec'
 require 'rspec/autorun'

@@ -2,6 +2,18 @@
 # Then make it so that if you don't pass a delimiter, it just concatenates them all together
 #
 # You can only use the `#each` method on the input array
+def join(array, thing = "")
+  result = ""
+
+  array.each do |stuff|
+    result += stuff + thing
+  end
+
+  if result[-1] == thing
+    result = result.chop
+  end
+  result
+end
 
 
 require 'rspec'

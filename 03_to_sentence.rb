@@ -3,6 +3,21 @@
 #
 # You can use any methods you like on the input array
 def to_sentence(array)
+  result = ""
+  counter = 0
+  array_size = array.count
+  array.each do |word|
+    if counter < array_size-2
+      result += "#{word}, "
+      counter += 1
+    elsif counter < array_size-1
+      result += "#{word} "
+      counter += 1
+    else
+      result += "and #{word}"
+    end
+  end
+  result
 end
 
 require 'rspec'
